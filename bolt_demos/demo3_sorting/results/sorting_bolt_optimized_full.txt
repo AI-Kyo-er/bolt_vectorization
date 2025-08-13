@@ -1,0 +1,161 @@
+Sorting benchmark (array size: 100000)
+Running 50 iterations for each test...
+
+=== Random Data Test ===
+Quicksort time: 0.004647 seconds
+Quicksort time: 0.004522 seconds
+Quicksort time: 0.004595 seconds
+Quicksort time: 0.004635 seconds
+Quicksort time: 0.004561 seconds
+Quicksort time: 0.004603 seconds
+Quicksort time: 0.004522 seconds
+Quicksort time: 0.004227 seconds
+Quicksort time: 0.004253 seconds
+Quicksort time: 0.004514 seconds
+Quicksort time: 0.004245 seconds
+Quicksort time: 0.004134 seconds
+Quicksort time: 0.004479 seconds
+Quicksort time: 0.004397 seconds
+Quicksort time: 0.004174 seconds
+Quicksort time: 0.004192 seconds
+Quicksort time: 0.004504 seconds
+Quicksort time: 0.004670 seconds
+Quicksort time: 0.004594 seconds
+Quicksort time: 0.004555 seconds
+Quicksort time: 0.004548 seconds
+Quicksort time: 0.004531 seconds
+Quicksort time: 0.004393 seconds
+Quicksort time: 0.004483 seconds
+Quicksort time: 0.004503 seconds
+Quicksort time: 0.004436 seconds
+Quicksort time: 0.004793 seconds
+Quicksort time: 0.004568 seconds
+Quicksort time: 0.004565 seconds
+Quicksort time: 0.004426 seconds
+Quicksort time: 0.004116 seconds
+Quicksort time: 0.004397 seconds
+Quicksort time: 0.004214 seconds
+Quicksort time: 0.004069 seconds
+Quicksort time: 0.004085 seconds
+Quicksort time: 0.004403 seconds
+Quicksort time: 0.004278 seconds
+Quicksort time: 0.004062 seconds
+Quicksort time: 0.004110 seconds
+Quicksort time: 0.004346 seconds
+Quicksort time: 0.004083 seconds
+Quicksort time: 0.004077 seconds
+Quicksort time: 0.004077 seconds
+Quicksort time: 0.004340 seconds
+Quicksort time: 0.004141 seconds
+Quicksort time: 0.004060 seconds
+Quicksort time: 0.004246 seconds
+Quicksort time: 0.004450 seconds
+Quicksort time: 0.004181 seconds
+Quicksort time: 0.004154 seconds
+Average quicksort time: 0.004363 seconds
+
+Merge sort time: 0.006506 seconds
+Merge sort time: 0.006402 seconds
+Merge sort time: 0.006268 seconds
+Merge sort time: 0.006442 seconds
+Merge sort time: 0.006313 seconds
+Merge sort time: 0.006296 seconds
+Merge sort time: 0.006503 seconds
+Merge sort time: 0.006238 seconds
+Merge sort time: 0.006355 seconds
+Merge sort time: 0.006320 seconds
+Merge sort time: 0.006182 seconds
+Merge sort time: 0.006491 seconds
+Merge sort time: 0.006510 seconds
+Merge sort time: 0.006450 seconds
+Merge sort time: 0.006557 seconds
+Merge sort time: 0.006629 seconds
+Merge sort time: 0.006597 seconds
+Merge sort time: 0.006186 seconds
+Merge sort time: 0.006250 seconds
+Merge sort time: 0.006422 seconds
+Merge sort time: 0.006160 seconds
+Merge sort time: 0.006320 seconds
+Merge sort time: 0.006254 seconds
+Merge sort time: 0.006139 seconds
+Merge sort time: 0.006370 seconds
+Merge sort time: 0.006200 seconds
+Merge sort time: 0.006338 seconds
+Merge sort time: 0.006310 seconds
+Merge sort time: 0.006188 seconds
+Merge sort time: 0.006674 seconds
+Merge sort time: 0.006748 seconds
+Merge sort time: 0.006463 seconds
+Merge sort time: 0.006385 seconds
+Merge sort time: 0.006241 seconds
+Merge sort time: 0.006333 seconds
+Merge sort time: 0.006234 seconds
+Merge sort time: 0.006122 seconds
+Merge sort time: 0.006634 seconds
+Merge sort time: 0.006581 seconds
+Merge sort time: 0.006425 seconds
+Merge sort time: 0.006316 seconds
+Merge sort time: 0.006200 seconds
+Merge sort time: 0.006333 seconds
+Merge sort time: 0.006214 seconds
+Merge sort time: 0.006173 seconds
+Merge sort time: 0.006290 seconds
+Merge sort time: 0.006288 seconds
+Merge sort time: 0.006445 seconds
+Merge sort time: 0.006326 seconds
+Merge sort time: 0.006226 seconds
+Average merge sort time: 0.006357 seconds
+
+=== Sorted Data Test ===
+Quicksort time: 2.060475 seconds
+Quicksort time: 2.072276 seconds
+Quicksort time: 2.075081 seconds
+Quicksort time: 2.063346 seconds
+Quicksort time: 2.138506 seconds
+Quicksort time: 2.136907 seconds
+Quicksort time: 2.074424 seconds
+Quicksort time: 2.101198 seconds
+Quicksort time: 2.105939 seconds
+Quicksort time: 2.103600 seconds
+Quicksort time: 2.086337 seconds
+Quicksort time: 2.084810 seconds
+Quicksort time: 2.078114 seconds
+Quicksort time: 2.135139 seconds
+Quicksort time: 2.176101 seconds
+Quicksort time: 2.097455 seconds
+Quicksort time: 2.092038 seconds
+Quicksort time: 2.078498 seconds
+Quicksort time: 2.088283 seconds
+Quicksort time: 2.089061 seconds
+Quicksort time: 2.082295 seconds
+Quicksort time: 2.091904 seconds
+Quicksort time: 2.090718 seconds
+Quicksort time: 2.119882 seconds
+Quicksort time: 2.132996 seconds
+Quicksort time: 2.088639 seconds
+Quicksort time: 2.095262 seconds
+Quicksort time: 2.095862 seconds
+Quicksort time: 2.093768 seconds
+Quicksort time: 2.121359 seconds
+Quicksort time: 2.085908 seconds
+Quicksort time: 2.091666 seconds
+Quicksort time: 2.075354 seconds
+Quicksort time: 2.119074 seconds
+Quicksort time: 2.090443 seconds
+Quicksort time: 2.223021 seconds
+Quicksort time: 2.202923 seconds
+Quicksort time: 2.157189 seconds
+Quicksort time: 2.081377 seconds
+Quicksort time: 2.089935 seconds
+Quicksort time: 2.087088 seconds
+Quicksort time: 2.085955 seconds
+Quicksort time: 2.237134 seconds
+Quicksort time: 2.242834 seconds
+Quicksort time: 2.205003 seconds
+Quicksort time: 2.204572 seconds
+Quicksort time: 2.184459 seconds
+Quicksort time: 2.126724 seconds
+Quicksort time: 2.093666 seconds
+Quicksort time: 2.111768 seconds
+Average quicksort time (sorted): 2.114927 seconds
+

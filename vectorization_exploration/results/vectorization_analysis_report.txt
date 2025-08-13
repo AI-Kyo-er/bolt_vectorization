@@ -1,0 +1,112 @@
+Vectorization Analysis Report - Demo 1
+=====================================
+
+This report analyzes vectorization patterns in different loop scenarios and identifies
+opportunities for binary/IR level optimization when vectorization is suboptimal.
+
+COMPILER VECTORIZATION RESULTS:
+===============================
+
+Successfully Vectorized Loops (10 instances):
+- Line 11: simple_vectorizable_loop - 16 byte vectors
+- Line 18: loop_with_function_call - 16 byte vectors  
+- Line 29: non_contiguous_access - 16 byte vectors
+- Line 44: mixed_data_types - 16 byte vectors
+- Line 65: matrix_multiply_naive (inner loop) - 16 byte vectors
+- Line 75: reduction_loop - 16 byte vectors
+- Line 83: conditional_loop - 16 byte vectors
+- Line 97: pointer_arithmetic_loop - 16 byte vectors
+- Line 116: main() initialization loop - 16 byte vectors
+- Line 191: matrix initialization loop - 16 byte vectors
+
+Failed Vectorization Patterns:
+=============================
+
+1. Data Type Issues:
+   - "unsupported data-type" - Multiple instances
+   - "no vectype for stmt" - Float operations
+
+2. Dependence Issues:
+   - "possible dependence between data-refs" - Read-after-write dependencies
+   - "would need a runtime alias check" - Pointer aliasing
+
+3. Control Flow Issues:
+   - "control flow in loop" - Conditional statements
+   - "complicated access pattern" - Irregular memory access
+
+4. Structural Issues:
+   - "multiple nested loops" - Complex loop structures
+   - "data ref analysis failed" - Complex pointer arithmetic
+
+PERFORMANCE ANALYSIS:
+====================
+
+Test Case Performance (normalized per iteration):
+1. Simple vectorizable loop: 0.000233 seconds
+2. Loop with function call: 0.000562 seconds (2.4x slower)
+3. Non-contiguous access: 0.000215 seconds (0.9x)
+4. Loop with dependencies: 0.000318 seconds (1.4x slower)
+5. Mixed data types: 0.000234 seconds (1.0x)
+6. Irregular bounds: 0.000304 seconds (1.3x slower)
+7. Matrix multiplication: 0.065128 seconds (280x slower)
+8. Reduction loop: 0.000069 seconds (0.3x - fastest)
+9. Conditional loop: 0.000219 seconds (0.9x)
+10. Pointer arithmetic: 0.000206 seconds (0.9x)
+
+KEY FINDINGS:
+=============
+
+1. Vectorization Success vs Performance:
+   - Some loops were vectorized but still show poor performance
+   - Matrix multiplication: vectorized inner loop but overall still slow
+   - Function calls in loops: vectorized but 2.4x slower than simple loops
+
+2. Suboptimal Vectorization Scenarios:
+   - Mixed data types: vectorized but type conversion overhead
+   - Non-contiguous access: vectorized but memory access pattern inefficient
+   - Conditional loops: vectorized but branch prediction issues
+
+3. Binary/IR Level Optimization Opportunities:
+   - Data layout optimization for non-contiguous access
+   - Loop restructuring for better vectorization
+   - Memory alignment and padding
+   - SIMD instruction selection optimization
+
+RECOMMENDATIONS FOR BINARY/IR LEVEL OPTIMIZATION:
+================================================
+
+1. Memory Layout Optimization:
+   - Reorganize data structures for better cache locality
+   - Implement structure-of-arrays (SoA) instead of array-of-structures (AoS)
+   - Add padding for SIMD alignment
+
+2. Loop Transformation:
+   - Loop unrolling for better instruction-level parallelism
+   - Loop interchange for better memory access patterns
+   - Loop fusion to reduce loop overhead
+
+3. SIMD Instruction Optimization:
+   - Manual SIMD intrinsics for critical loops
+   - Custom vectorization for complex patterns
+   - Runtime vectorization for dynamic cases
+
+4. Compiler Flag Optimization:
+   - Experiment with different optimization levels
+   - Use profile-guided optimization (PGO)
+   - Try different vectorization strategies
+
+CONCLUSION:
+===========
+
+The analysis reveals that while GCC's auto-vectorizer successfully vectorizes many loops,
+there are significant opportunities for binary/IR level optimization to improve performance
+beyond what the compiler can achieve automatically. The key areas for improvement are:
+
+1. Memory access pattern optimization
+2. Data structure layout improvements  
+3. Manual SIMD optimization for complex cases
+4. Runtime optimization based on data characteristics
+
+This demonstrates the value of the second goal: detecting and optimizing vectorization
+opportunities at the binary stream or higher IR level when compiler vectorization is
+suboptimal. 

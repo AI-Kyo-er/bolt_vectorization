@@ -1,0 +1,43 @@
+reduction_loop:
+.LFB41:
+	.cfi_startproc
+	endbr64	
+# src/ir_analysis_test.c:28:     for (int i = 0; i < n; i++) {
+	testl	%esi, %esi	# n
+	jle	.L21	#,
+	movslq	%esi, %rsi	# n, n
+# src/ir_analysis_test.c:27:     float sum = 0.0f;
+	pxor	%xmm0, %xmm0	# <retval>
+	leaq	(%rdi,%rsi,4), %rax	#, _21
+	andl	$1, %esi	#, n
+	je	.L20	#,
+# src/ir_analysis_test.c:29:         sum += a[i];
+	addss	(%rdi), %xmm0	# MEM[(float *)_5], <retval>
+# src/ir_analysis_test.c:28:     for (int i = 0; i < n; i++) {
+	addq	$4, %rdi	#, ivtmp.42
+	cmpq	%rax, %rdi	# _21, ivtmp.42
+	je	.L28	#,
+	.p2align 4,,10
+	.p2align 3
+.L20:
+# src/ir_analysis_test.c:29:         sum += a[i];
+	addss	(%rdi), %xmm0	# MEM[(float *)_5], <retval>
+# src/ir_analysis_test.c:28:     for (int i = 0; i < n; i++) {
+	addq	$8, %rdi	#, ivtmp.42
+# src/ir_analysis_test.c:29:         sum += a[i];
+	addss	-4(%rdi), %xmm0	# MEM[(float *)_5], <retval>
+# src/ir_analysis_test.c:28:     for (int i = 0; i < n; i++) {
+	cmpq	%rax, %rdi	# _21, ivtmp.42
+	jne	.L20	#,
+	ret	
+	.p2align 4,,10
+	.p2align 3
+.L21:
+# src/ir_analysis_test.c:27:     float sum = 0.0f;
+	pxor	%xmm0, %xmm0	# <retval>
+# src/ir_analysis_test.c:32: }
+	ret	
+.L28:
+	ret	
+	.cfi_endproc
+.LFE41:

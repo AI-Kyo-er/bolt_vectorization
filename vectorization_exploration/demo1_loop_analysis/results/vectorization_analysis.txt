@@ -1,0 +1,138 @@
+src/vectorization_test.c: In function ‘loop_with_function_call’:
+src/vectorization_test.c:19:30: warning: implicit declaration of function ‘some_function’ [-Wimplicit-function-declaration]
+   19 |         c[i] = a[i] + b[i] + some_function(i);
+      |                              ^~~~~~~~~~~~~
+src/vectorization_test.c:11:23: missed: couldn't vectorize loop
+src/vectorization_test.c:11:23: missed: not vectorized: unsupported data-type
+src/vectorization_test.c:18:23: missed: couldn't vectorize loop
+src/vectorization_test.c:18:23: missed: not vectorized: unsupported data-type
+src/vectorization_test.c:29:23: missed: couldn't vectorize loop
+src/vectorization_test.c:29:23: missed: not vectorized: unsupported data-type
+src/vectorization_test.c:37:23: missed: couldn't vectorize loop
+src/vectorization_test.c:38:31: missed: not vectorized, possible dependence between data-refs *_9 and *_11
+src/vectorization_test.c:44:23: missed: couldn't vectorize loop
+src/vectorization_test.c:45:17: missed: not vectorized: no vectype for stmt: _4 = *_3;
+ scalar_type: float
+src/vectorization_test.c:51:23: missed: couldn't vectorize loop
+src/vectorization_test.c:51:23: missed: not vectorized: control flow in loop.
+src/vectorization_test.c:62:23: missed: couldn't vectorize loop
+src/vectorization_test.c:62:23: missed: not vectorized: multiple nested loops.
+src/vectorization_test.c:63:27: missed: couldn't vectorize loop
+src/vectorization_test.c:66:42: missed: not vectorized: data ref analysis failed: _18 = *_17;
+src/vectorization_test.c:65:31: missed: couldn't vectorize loop
+src/vectorization_test.c:66:25: missed: not vectorized: complicated access pattern.
+src/vectorization_test.c:75:23: missed: couldn't vectorize loop
+src/vectorization_test.c:75:23: missed: not vectorized: unsupported data-type
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Sum: %d\n", sum_16);
+src/vectorization_test.c:83:23: missed: couldn't vectorize loop
+src/vectorization_test.c:83:23: missed: would need a runtime alias check
+src/vectorization_test.c:97:23: missed: couldn't vectorize loop
+src/vectorization_test.c:97:23: missed: not vectorized: unsupported data-type
+src/vectorization_test.c:241:23: missed: couldn't vectorize loop
+src/vectorization_test.c:242:9: missed: statement clobbers memory: free (_57);
+src/vectorization_test.c:227:23: missed: couldn't vectorize loop
+src/vectorization_test.c:98:15: missed: not vectorized: complicated access pattern.
+src/vectorization_test.c:97:23: optimized: loop vectorized using 16 byte vectors
+src/vectorization_test.c:217:23: missed: couldn't vectorize loop
+src/vectorization_test.c:85:18: missed: not vectorized: complicated access pattern.
+src/vectorization_test.c:83:23: optimized: loop vectorized using 16 byte vectors
+src/vectorization_test.c:207:23: missed: couldn't vectorize loop
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Sum: %d\n", sum_462);
+src/vectorization_test.c:75:23: optimized: loop vectorized using 16 byte vectors
+src/vectorization_test.c:197:23: missed: couldn't vectorize loop
+src/vectorization_test.c:197:23: missed: not vectorized: multiple nested loops.
+src/vectorization_test.c:62:23: missed: couldn't vectorize loop
+src/vectorization_test.c:62:23: missed: not vectorized: multiple nested loops.
+src/vectorization_test.c:63:27: missed: couldn't vectorize loop
+src/vectorization_test.c:66:42: missed: not vectorized: data ref analysis failed: _333 = *_332;
+src/vectorization_test.c:65:31: optimized: loop vectorized using 16 byte vectors
+src/vectorization_test.c:187:23: missed: couldn't vectorize loop
+src/vectorization_test.c:188:16: missed: statement clobbers memory: _29 = malloc (4096);
+src/vectorization_test.c:191:27: optimized: loop vectorized using 16 byte vectors
+src/vectorization_test.c:175:23: missed: couldn't vectorize loop
+src/vectorization_test.c:175:23: missed: not vectorized: control flow in loop.
+src/vectorization_test.c:51:23: missed: couldn't vectorize loop
+src/vectorization_test.c:51:23: missed: not vectorized: control flow in loop.
+src/vectorization_test.c:165:23: missed: couldn't vectorize loop
+src/vectorization_test.c:45:14: missed: not vectorized: complicated access pattern.
+src/vectorization_test.c:44:23: optimized: loop vectorized using 16 byte vectors
+src/vectorization_test.c:155:23: missed: couldn't vectorize loop
+src/vectorization_test.c:38:14: missed: not vectorized: complicated access pattern.
+src/vectorization_test.c:37:23: missed: couldn't vectorize loop
+src/vectorization_test.c:38:31: missed: not vectorized, possible dependence between data-refs *_278 and *_280
+src/vectorization_test.c:145:23: missed: couldn't vectorize loop
+src/vectorization_test.c:30:14: missed: not vectorized: complicated access pattern.
+src/vectorization_test.c:29:23: optimized: loop vectorized using 16 byte vectors
+src/vectorization_test.c:135:23: missed: couldn't vectorize loop
+src/vectorization_test.c:19:14: missed: not vectorized: complicated access pattern.
+src/vectorization_test.c:18:23: optimized: loop vectorized using 16 byte vectors
+src/vectorization_test.c:125:23: missed: couldn't vectorize loop
+src/vectorization_test.c:12:14: missed: not vectorized: complicated access pattern.
+src/vectorization_test.c:11:23: optimized: loop vectorized using 16 byte vectors
+src/vectorization_test.c:116:23: optimized: loop vectorized using 16 byte vectors
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"Vectorization Analysis Test Program"[0]);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"===================================\n"[0]);
+src/vectorization_test.c:109:14: missed: statement clobbers memory: a_92 = malloc (4000000);
+src/vectorization_test.c:110:14: missed: statement clobbers memory: b_94 = malloc (4000000);
+src/vectorization_test.c:111:14: missed: statement clobbers memory: c_96 = malloc (4000000);
+src/vectorization_test.c:112:17: missed: statement clobbers memory: fa_98 = malloc (4000000);
+src/vectorization_test.c:113:17: missed: statement clobbers memory: fc_100 = malloc (4000000);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"Test Case 1: Simple vectorizable loop"[0]);
+src/vectorization_test.c:124:21: missed: statement clobbers memory: start_102 = clock ();
+src/vectorization_test.c:128:19: missed: statement clobbers memory: end_104 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Simple loop: %f seconds (100 iterations)\n", _10);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"\nTest Case 2: Loop with function call"[0]);
+src/vectorization_test.c:134:13: missed: statement clobbers memory: start_106 = clock ();
+src/vectorization_test.c:138:11: missed: statement clobbers memory: end_108 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Function call loop: %f seconds (50 iterations)\n", _13);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"\nTest Case 3: Non-contiguous memory access"[0]);
+src/vectorization_test.c:144:13: missed: statement clobbers memory: start_110 = clock ();
+src/vectorization_test.c:148:11: missed: statement clobbers memory: end_112 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Non-contiguous access: %f seconds (100 iterations)\n", _16);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"\nTest Case 4: Loop with dependencies"[0]);
+src/vectorization_test.c:154:13: missed: statement clobbers memory: start_114 = clock ();
+src/vectorization_test.c:158:11: missed: statement clobbers memory: end_116 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Dependency loop: %f seconds (50 iterations)\n", _19);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"\nTest Case 5: Mixed data types"[0]);
+src/vectorization_test.c:164:13: missed: statement clobbers memory: start_118 = clock ();
+src/vectorization_test.c:168:11: missed: statement clobbers memory: end_120 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Mixed types: %f seconds (100 iterations)\n", _22);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"\nTest Case 6: Irregular loop bounds"[0]);
+src/vectorization_test.c:174:13: missed: statement clobbers memory: start_122 = clock ();
+src/vectorization_test.c:178:11: missed: statement clobbers memory: end_124 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Irregular bounds: %f seconds (50 iterations)\n", _25);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"\nTest Case 7: Matrix multiplication"[0]);
+src/vectorization_test.c:184:18: missed: statement clobbers memory: A_126 = malloc (4096);
+src/vectorization_test.c:185:18: missed: statement clobbers memory: B_128 = malloc (4096);
+src/vectorization_test.c:186:18: missed: statement clobbers memory: C_130 = malloc (4096);
+src/vectorization_test.c:188:16: missed: statement clobbers memory: _29 = malloc (4096);
+src/vectorization_test.c:189:16: missed: statement clobbers memory: _31 = malloc (4096);
+src/vectorization_test.c:190:16: missed: statement clobbers memory: _33 = malloc (4096);
+src/vectorization_test.c:196:13: missed: statement clobbers memory: start_132 = clock ();
+src/vectorization_test.c:200:11: missed: statement clobbers memory: end_134 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Matrix multiply: %f seconds (10 iterations)\n", _44);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"\nTest Case 8: Reduction loop"[0]);
+src/vectorization_test.c:206:13: missed: statement clobbers memory: start_136 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Sum: %d\n", stmp_sum_345.227_544);
+src/vectorization_test.c:210:11: missed: statement clobbers memory: end_138 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Reduction: %f seconds (100 iterations)\n", _47);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"\nTest Case 9: Conditional loop"[0]);
+src/vectorization_test.c:216:13: missed: statement clobbers memory: start_140 = clock ();
+src/vectorization_test.c:220:11: missed: statement clobbers memory: end_142 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Conditional: %f seconds (50 iterations)\n", _50);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"\nTest Case 10: Pointer arithmetic"[0]);
+src/vectorization_test.c:226:13: missed: statement clobbers memory: start_144 = clock ();
+src/vectorization_test.c:230:11: missed: statement clobbers memory: end_146 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Pointer arithmetic: %f seconds (100 iterations)\n", _53);
+src/vectorization_test.c:235:5: missed: statement clobbers memory: free (a_92);
+src/vectorization_test.c:236:5: missed: statement clobbers memory: free (b_94);
+src/vectorization_test.c:237:5: missed: statement clobbers memory: free (c_96);
+src/vectorization_test.c:238:5: missed: statement clobbers memory: free (fa_98);
+src/vectorization_test.c:239:5: missed: statement clobbers memory: free (fc_100);
+src/vectorization_test.c:242:9: missed: statement clobbers memory: free (_57);
+src/vectorization_test.c:243:9: missed: statement clobbers memory: free (_59);
+src/vectorization_test.c:244:9: missed: statement clobbers memory: free (_61);
+src/vectorization_test.c:246:5: missed: statement clobbers memory: free (A_126);
+src/vectorization_test.c:247:5: missed: statement clobbers memory: free (B_128);
+src/vectorization_test.c:248:5: missed: statement clobbers memory: free (C_130);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"\nBenchmark completed."[0]);

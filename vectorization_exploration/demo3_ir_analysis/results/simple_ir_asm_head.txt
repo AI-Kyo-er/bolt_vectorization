@@ -1,0 +1,120 @@
+	.file	"simple_ir_test.c"
+# GNU C17 (Ubuntu 13.1.0-8ubuntu1~22.04) version 13.1.0 (x86_64-linux-gnu)
+#	compiled by GNU C version 13.1.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+# GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+# options passed: -mtune=generic -march=x86-64 -O2 -fasynchronous-unwind-tables -fstack-protector-strong -fstack-clash-protection -fcf-protection
+	.text
+	.p2align 4
+	.globl	simple_vectorizable
+	.type	simple_vectorizable, @function
+simple_vectorizable:
+.LFB39:
+	.cfi_startproc
+	endbr64	
+# src/simple_ir_test.c:9:     for (int i = 0; i < n; i++) {
+	testl	%ecx, %ecx	# n
+	jle	.L1	#,
+	movslq	%ecx, %rcx	# n, n
+	xorl	%eax, %eax	# ivtmp.15
+	salq	$2, %rcx	#, _23
+	.p2align 4,,10
+	.p2align 3
+.L3:
+# src/simple_ir_test.c:10:         c[i] = a[i] + b[i];
+	movss	(%rdi,%rax), %xmm0	# MEM[(float *)a_13(D) + ivtmp.15_25 * 1], MEM[(float *)a_13(D) + ivtmp.15_25 * 1]
+	addss	(%rsi,%rax), %xmm0	# MEM[(float *)b_14(D) + ivtmp.15_25 * 1], tmp93
+# src/simple_ir_test.c:10:         c[i] = a[i] + b[i];
+	movss	%xmm0, (%rdx,%rax)	# tmp93, MEM[(float *)c_15(D) + ivtmp.15_25 * 1]
+# src/simple_ir_test.c:9:     for (int i = 0; i < n; i++) {
+	addq	$4, %rax	#, ivtmp.15
+	cmpq	%rax, %rcx	# ivtmp.15, _23
+	jne	.L3	#,
+.L1:
+# src/simple_ir_test.c:12: }
+	ret	
+	.cfi_endproc
+.LFE39:
+	.size	simple_vectorizable, .-simple_vectorizable
+	.p2align 4
+	.globl	complex_loop
+	.type	complex_loop, @function
+complex_loop:
+.LFB40:
+	.cfi_startproc
+	endbr64	
+	movslq	%ecx, %r8	# n, n
+# src/simple_ir_test.c:18:             c[i] = a[i] * b[i] + 1.0f;
+	movss	.LC1(%rip), %xmm3	#, tmp97
+# src/simple_ir_test.c:16:     for (int i = 0; i < n; i++) {
+	xorl	%eax, %eax	# ivtmp.28
+# src/simple_ir_test.c:17:         if (a[i] > 0.0f) {
+	pxor	%xmm2, %xmm2	# tmp94
+	salq	$2, %r8	#, _16
+# src/simple_ir_test.c:16:     for (int i = 0; i < n; i++) {
+	testl	%ecx, %ecx	# n
+	jg	.L11	#,
+	ret	
+	.p2align 4,,10
+	.p2align 3
+.L17:
+# src/simple_ir_test.c:18:             c[i] = a[i] * b[i] + 1.0f;
+	mulss	%xmm1, %xmm0	# pretmp_31, tmp95
+# src/simple_ir_test.c:18:             c[i] = a[i] * b[i] + 1.0f;
+	addss	%xmm3, %xmm0	# tmp97, _9
+# src/simple_ir_test.c:18:             c[i] = a[i] * b[i] + 1.0f;
+	movss	%xmm0, (%rdx,%rax)	# _9, MEM[(float *)c_21(D) + ivtmp.28_23 * 1]
+# src/simple_ir_test.c:16:     for (int i = 0; i < n; i++) {
+	addq	$4, %rax	#, ivtmp.28
+	cmpq	%rax, %r8	# ivtmp.28, _16
+	je	.L6	#,
+.L11:
+# src/simple_ir_test.c:17:         if (a[i] > 0.0f) {
+	movss	(%rdi,%rax), %xmm0	# MEM[(float *)a_19(D) + ivtmp.28_23 * 1], _4
+# src/simple_ir_test.c:18:             c[i] = a[i] * b[i] + 1.0f;
+	movss	(%rsi,%rax), %xmm1	# MEM[(float *)b_20(D) + ivtmp.28_23 * 1], pretmp_31
+# src/simple_ir_test.c:17:         if (a[i] > 0.0f) {
+	comiss	%xmm2, %xmm0	# tmp94, _4
+	ja	.L17	#,
+# src/simple_ir_test.c:20:             c[i] = a[i] - b[i];
+	subss	%xmm1, %xmm0	# pretmp_31, _9
+# src/simple_ir_test.c:18:             c[i] = a[i] * b[i] + 1.0f;
+	movss	%xmm0, (%rdx,%rax)	# _9, MEM[(float *)c_21(D) + ivtmp.28_23 * 1]
+# src/simple_ir_test.c:16:     for (int i = 0; i < n; i++) {
+	addq	$4, %rax	#, ivtmp.28
+	cmpq	%rax, %r8	# ivtmp.28, _16
+	jne	.L11	#,
+.L6:
+# src/simple_ir_test.c:23: }
+	ret	
+	.cfi_endproc
+.LFE40:
+	.size	complex_loop, .-complex_loop
+	.p2align 4
+	.globl	reduction_loop
+	.type	reduction_loop, @function
+reduction_loop:
+.LFB41:
+	.cfi_startproc
+	endbr64	
+# src/simple_ir_test.c:28:     for (int i = 0; i < n; i++) {
+	testl	%esi, %esi	# n
+	jle	.L21	#,
+	movslq	%esi, %rsi	# n, n
+# src/simple_ir_test.c:27:     float sum = 0.0f;
+	pxor	%xmm0, %xmm0	# <retval>
+	leaq	(%rdi,%rsi,4), %rax	#, _21
+	andl	$1, %esi	#, n
+	je	.L20	#,
+# src/simple_ir_test.c:29:         sum += a[i];
+	addss	(%rdi), %xmm0	# MEM[(float *)_5], <retval>
+# src/simple_ir_test.c:28:     for (int i = 0; i < n; i++) {
+	addq	$4, %rdi	#, ivtmp.36
+	cmpq	%rax, %rdi	# _21, ivtmp.36
+	je	.L28	#,
+	.p2align 4,,10
+	.p2align 3
+.L20:
+# src/simple_ir_test.c:29:         sum += a[i];
+	addss	(%rdi), %xmm0	# MEM[(float *)_5], <retval>
+# src/simple_ir_test.c:28:     for (int i = 0; i < n; i++) {

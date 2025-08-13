@@ -1,0 +1,50 @@
+complex_loop:
+.LFB40:
+	.cfi_startproc
+	endbr64	
+	movslq	%ecx, %r8	# n, n
+# src/ir_analysis_test.c:18:             c[i] = a[i] * b[i] + 1.0f;
+	movss	.LC1(%rip), %xmm3	#, tmp97
+# src/ir_analysis_test.c:16:     for (int i = 0; i < n; i++) {
+	xorl	%eax, %eax	# ivtmp.34
+# src/ir_analysis_test.c:17:         if (a[i] > 0.0f) {
+	pxor	%xmm2, %xmm2	# tmp94
+	salq	$2, %r8	#, _16
+# src/ir_analysis_test.c:16:     for (int i = 0; i < n; i++) {
+	testl	%ecx, %ecx	# n
+	jg	.L11	#,
+	ret	
+	.p2align 4,,10
+	.p2align 3
+.L17:
+# src/ir_analysis_test.c:18:             c[i] = a[i] * b[i] + 1.0f;
+	mulss	%xmm1, %xmm0	# pretmp_31, tmp95
+# src/ir_analysis_test.c:18:             c[i] = a[i] * b[i] + 1.0f;
+	addss	%xmm3, %xmm0	# tmp97, _9
+# src/ir_analysis_test.c:18:             c[i] = a[i] * b[i] + 1.0f;
+	movss	%xmm0, (%rdx,%rax)	# _9, MEM[(float *)c_21(D) + ivtmp.34_23 * 1]
+# src/ir_analysis_test.c:16:     for (int i = 0; i < n; i++) {
+	addq	$4, %rax	#, ivtmp.34
+	cmpq	%rax, %r8	# ivtmp.34, _16
+	je	.L6	#,
+.L11:
+# src/ir_analysis_test.c:17:         if (a[i] > 0.0f) {
+	movss	(%rdi,%rax), %xmm0	# MEM[(float *)a_19(D) + ivtmp.34_23 * 1], _4
+# src/ir_analysis_test.c:18:             c[i] = a[i] * b[i] + 1.0f;
+	movss	(%rsi,%rax), %xmm1	# MEM[(float *)b_20(D) + ivtmp.34_23 * 1], pretmp_31
+# src/ir_analysis_test.c:17:         if (a[i] > 0.0f) {
+	comiss	%xmm2, %xmm0	# tmp94, _4
+	ja	.L17	#,
+# src/ir_analysis_test.c:20:             c[i] = a[i] - b[i];
+	subss	%xmm1, %xmm0	# pretmp_31, _9
+# src/ir_analysis_test.c:18:             c[i] = a[i] * b[i] + 1.0f;
+	movss	%xmm0, (%rdx,%rax)	# _9, MEM[(float *)c_21(D) + ivtmp.34_23 * 1]
+# src/ir_analysis_test.c:16:     for (int i = 0; i < n; i++) {
+	addq	$4, %rax	#, ivtmp.34
+	cmpq	%rax, %r8	# ivtmp.34, _16
+	jne	.L11	#,
+.L6:
+# src/ir_analysis_test.c:23: }
+	ret	
+	.cfi_endproc
+.LFE40:

@@ -1,0 +1,94 @@
+Binary Vectorization Analysis Tool
+==================================
+Analyzing file: ../demo1_loop_analysis/build/vectorization_test
+
+ELF Header Information:
+Machine: 62
+Entry point: 0x1bf0
+Number of sections: 6
+
+Analyzing section: .init (size: 27 bytes)
+==========================================
+No SIMD instructions detected in this section.
+
+Memory Access Pattern Analysis:
+===============================
+Memory access instructions: 1
+Address calculation instructions (LEA): 0
+Function calls: 0
+Jump instructions: 0
+Memory instruction density: 3.70%
+
+Analyzing section: .plt (size: 96 bytes)
+==========================================
+No SIMD instructions detected in this section.
+
+Memory Access Pattern Analysis:
+===============================
+Memory access instructions: 0
+Address calculation instructions (LEA): 0
+Function calls: 0
+Jump instructions: 5
+Memory instruction density: 0.00%
+
+Analyzing section: .plt.got (size: 16 bytes)
+==========================================
+No SIMD instructions detected in this section.
+
+Memory Access Pattern Analysis:
+===============================
+Memory access instructions: 0
+Address calculation instructions (LEA): 0
+Function calls: 0
+Jump instructions: 0
+Memory instruction density: 0.00%
+
+Analyzing section: .plt.sec (size: 80 bytes)
+==========================================
+No SIMD instructions detected in this section.
+
+Memory Access Pattern Analysis:
+===============================
+Memory access instructions: 0
+Address calculation instructions (LEA): 0
+Function calls: 0
+Jump instructions: 0
+Memory instruction density: 0.00%
+
+Analyzing section: .text (size: 3851 bytes)
+==========================================
+SSE/SSE2: MOVDQU - Move Unaligned Packed Integers - 13 instances (16-byte vectors)
+SSE/SSE2: ADDPS - Add Packed Single-Precision - 5 instances (16-byte vectors)
+SSE/SSE2: MULPS - Multiply Packed Single-Precision - 2 instances (16-byte vectors)
+SSE/SSE2: MULPD - Multiply Packed Double-Precision - 1 instances (16-byte vectors)
+SSE/SSE2: SHUFPS - Shuffle Packed Single-Precision - 1 instances (16-byte vectors)
+SSE/SSE2: POR - Bitwise Logical OR - 1 instances (16-byte vectors)
+SSE/SSE2: POR - Bitwise Logical OR - 1 instances (16-byte vectors)
+SSE/SSE2: PAND - Bitwise Logical AND - 1 instances (16-byte vectors)
+SSE/SSE2: PAND - Bitwise Logical AND - 1 instances (16-byte vectors)
+SSE/SSE2: PANDN - Bitwise Logical AND NOT - 1 instances (16-byte vectors)
+SSE/SSE2: PANDN - Bitwise Logical AND NOT - 1 instances (16-byte vectors)
+SSE/SSE2: PXOR - Bitwise Logical XOR - 16 instances (16-byte vectors)
+SSE/SSE2: PXOR - Bitwise Logical XOR - 16 instances (16-byte vectors)
+
+Total SIMD instructions found: 60
+
+Memory Access Pattern Analysis:
+===============================
+Memory access instructions: 229
+Address calculation instructions (LEA): 42
+Function calls: 75
+Jump instructions: 7
+Memory instruction density: 7.04%
+
+Analyzing section: .fini (size: 13 bytes)
+==========================================
+No SIMD instructions detected in this section.
+
+Memory Access Pattern Analysis:
+===============================
+Memory access instructions: 0
+Address calculation instructions (LEA): 0
+Function calls: 0
+Jump instructions: 0
+Memory instruction density: 0.00%

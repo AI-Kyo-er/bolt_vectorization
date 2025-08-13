@@ -1,0 +1,13 @@
+=== Original Program Results ===
+Execution time: 0.205898 seconds
+Execution time: 0.200551 seconds
+Execution time: 0.199931 seconds
+Execution time: 0.205948 seconds
+Execution time: 0.204304 seconds
+
+=== BOLT Optimized Program Results ===
+Execution time: 0.255519 seconds
+Execution time: 0.211875 seconds
+Execution time: 0.210585 seconds
+Execution time: 0.209486 seconds
+Execution time: 0.207959 seconds

@@ -1,0 +1,61 @@
+BOLT Demo 2 - Matrix Multiplication Benchmark Results
+====================================================
+
+Test Program: matrix_multiply.c
+- Matrix size: 512x512
+- Two algorithms: naive O(n^3) and cache-optimized blocked multiplication
+- Demonstrates cache locality and memory access pattern optimization
+
+Original Program Performance (3 runs):
+
+Run 1:
+Matrix multiplication benchmark (size: 512x512)
+Naive multiplication time: 0.078851 seconds
+Optimized multiplication time: 0.054976 seconds
+Speedup: 1.43x
+
+Run 2:
+Matrix multiplication benchmark (size: 512x512)  
+Naive multiplication time: 0.077616 seconds
+Optimized multiplication time: 0.057830 seconds
+Speedup: 1.34x
+
+Run 3:
+Matrix multiplication benchmark (size: 512x512)
+Naive multiplication time: 0.078529 seconds
+Optimized multiplication time: 0.051978 seconds
+Speedup: 1.51x
+
+BOLT Optimized Program Performance (3 runs):
+
+Run 1:
+Matrix multiplication benchmark (size: 512x512)
+Naive multiplication time: 0.080149 seconds
+Optimized multiplication time: 0.049201 seconds
+Speedup: 1.63x
+
+Run 2:
+Matrix multiplication benchmark (size: 512x512)
+Naive multiplication time: 0.078045 seconds
+Optimized multiplication time: 0.045176 seconds
+Speedup: 1.73x
+
+Run 3:
+Matrix multiplication benchmark (size: 512x512)
+Naive multiplication time: 0.077743 seconds
+Optimized multiplication time: 0.044254 seconds
+Speedup: 1.76x
+
+Performance Analysis:
+- Original average speedup: 1.43x
+- BOLT optimized average speedup: 1.71x
+- Improvement from BOLT: ~19.6% better performance
+- BOLT particularly improved the optimized algorithm performance
+- Cache-friendly code benefits significantly from BOLT's code layout optimization
+- Memory access pattern optimization shows clear benefits with BOLT
+
+Key Findings:
+1. BOLT shows more significant improvements on memory-intensive workloads
+2. Cache-optimized algorithms benefit more from BOLT than simple algorithms
+3. Code layout optimization has measurable impact on matrix computations
+4. Better instruction cache utilization leads to improved performance 

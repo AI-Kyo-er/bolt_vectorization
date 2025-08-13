@@ -1,0 +1,4 @@
+Matrix multiplication benchmark (size: 512x512)
+Naive multiplication time: 0.075760 seconds
+Optimized multiplication time: 0.054074 seconds
+Speedup: 1.40x

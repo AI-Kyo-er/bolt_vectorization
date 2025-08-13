@@ -1,0 +1,33 @@
+BOLT Demo 1 - Compute Heavy Benchmark Results
+=============================================
+
+Test Program: compute_heavy.c
+- Hot function: 1,000,000 calls
+- Medium function: 100,000 calls  
+- Cold function: 1,000 calls
+
+Original Program Performance (5 runs):
+- 0.214197 seconds
+- 0.218075 seconds
+- 0.210947 seconds
+- 0.209637 seconds
+- 0.210673 seconds
+Average: 0.21271 seconds
+
+BOLT Optimized Program Performance (5 runs):
+- 0.203758 seconds
+- 0.223147 seconds
+- 0.218735 seconds
+- 0.202419 seconds
+- 0.204713 seconds
+Average: 0.21055 seconds
+
+Performance Improvement: 
+- Time reduction: 0.00216 seconds
+- Speedup: 1.01% (minimal improvement)
+
+Analysis:
+- BOLT achieved basic code layout optimization
+- Limited improvement due to lack of runtime profile data
+- The program's compute-intensive nature limits memory/cache optimization benefits
+- Better results would be expected with proper perf profile integration 

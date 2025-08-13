@@ -1,0 +1,134 @@
+Vectorization Analysis Test Program
+===================================
+
+Test Case 1: Simple vectorizable loop
+Simple loop: 0.023340 seconds (100 iterations)
+
+Test Case 2: Loop with function call
+Function call loop: 0.028120 seconds (50 iterations)
+
+Test Case 3: Non-contiguous memory access
+Non-contiguous access: 0.021514 seconds (100 iterations)
+
+Test Case 4: Loop with dependencies
+Dependency loop: 0.015900 seconds (50 iterations)
+
+Test Case 5: Mixed data types
+Mixed types: 0.023447 seconds (100 iterations)
+
+Test Case 6: Irregular loop bounds
+Irregular bounds: 0.015186 seconds (50 iterations)
+
+Test Case 7: Matrix multiplication
+Matrix multiply: 0.651278 seconds (10 iterations)
+
+Test Case 8: Reduction loop
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Sum: 1783293664
+Reduction: 0.006922 seconds (100 iterations)
+
+Test Case 9: Conditional loop
+Conditional: 0.010942 seconds (50 iterations)
+
+Test Case 10: Pointer arithmetic
+Pointer arithmetic: 0.020578 seconds (100 iterations)
+
+Benchmark completed.

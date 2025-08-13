@@ -1,0 +1,13 @@
+Simple IR Level Vectorization Analysis Test
+==========================================
+
+Test Case 1: Simple vectorizable loop
+Time: 0.000017 seconds (1000 iterations)
+
+Test Case 2: Complex loop with conditionals
+Time: 0.000100 seconds (1000 iterations)
+
+Test Case 3: Reduction loop
+Time: 0.000061 seconds (1000 iterations), Sum: 4950.000000
+
+Simple IR analysis test completed.

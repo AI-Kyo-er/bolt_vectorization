@@ -1,0 +1,42 @@
+src/simple_ir_test.c:9:23: missed: couldn't vectorize loop
+src/simple_ir_test.c:10:17: missed: not vectorized: no vectype for stmt: _4 = *_3;
+ scalar_type: float
+src/simple_ir_test.c:16:23: missed: couldn't vectorize loop
+src/simple_ir_test.c:16:23: missed: not vectorized: control flow in loop.
+src/simple_ir_test.c:28:23: missed: couldn't vectorize loop
+src/simple_ir_test.c:29:17: missed: not vectorized: no vectype for stmt: _4 = *_3;
+ scalar_type: float
+src/simple_ir_test.c:78:29: missed: couldn't vectorize loop
+src/simple_ir_test.c:29:17: missed: not vectorized: no vectype for stmt: _77 = *_76;
+ scalar_type: float
+src/simple_ir_test.c:28:23: optimized: loop vectorized using 16 byte vectors
+src/simple_ir_test.c:67:29: missed: couldn't vectorize loop
+src/simple_ir_test.c:67:29: missed: not vectorized: control flow in loop.
+src/simple_ir_test.c:16:23: missed: couldn't vectorize loop
+src/simple_ir_test.c:16:23: missed: not vectorized: control flow in loop.
+src/simple_ir_test.c:57:29: missed: couldn't vectorize loop
+src/simple_ir_test.c:10:14: missed: not vectorized: complicated access pattern.
+src/simple_ir_test.c:9:23: optimized: loop vectorized using 16 byte vectors
+src/simple_ir_test.c:49:23: optimized: loop vectorized using 16 byte vectors
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"Simple IR Level Vectorization Analysis Test"[0]);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"==========================================\n"[0]);
+src/simple_ir_test.c:39:16: missed: statement clobbers memory: a_34 = malloc (400);
+src/simple_ir_test.c:40:16: missed: statement clobbers memory: b_36 = malloc (400);
+src/simple_ir_test.c:41:16: missed: statement clobbers memory: c_38 = malloc (400);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"Test Case 1: Simple vectorizable loop"[0]);
+src/simple_ir_test.c:56:21: missed: statement clobbers memory: start_40 = clock ();
+src/simple_ir_test.c:60:19: missed: statement clobbers memory: end_43 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Time: %f seconds (1000 iterations)\n", _13);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"\nTest Case 2: Complex loop with conditionals"[0]);
+src/simple_ir_test.c:66:13: missed: statement clobbers memory: start_45 = clock ();
+src/simple_ir_test.c:70:11: missed: statement clobbers memory: end_47 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Time: %f seconds (1000 iterations)\n", _16);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"\nTest Case 3: Reduction loop"[0]);
+src/simple_ir_test.c:76:13: missed: statement clobbers memory: start_49 = clock ();
+src/simple_ir_test.c:81:11: missed: statement clobbers memory: end_52 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Time: %f seconds (1000 iterations), Sum: %f\n", _20, _17);
+src/simple_ir_test.c:86:5: missed: statement clobbers memory: free (a_34);
+src/simple_ir_test.c:87:5: missed: statement clobbers memory: free (b_36);
+src/simple_ir_test.c:88:5: missed: statement clobbers memory: free (c_38);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"\nSimple IR analysis test completed."[0]);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"Memory allocation failed!"[0]);

@@ -1,0 +1,27 @@
+simple_vectorizable:
+.LFB39:
+	.cfi_startproc
+	endbr64	
+# src/ir_analysis_test.c:9:     for (int i = 0; i < n; i++) {
+	testl	%ecx, %ecx	# n
+	jle	.L1	#,
+	movslq	%ecx, %rcx	# n, n
+	xorl	%eax, %eax	# ivtmp.21
+	salq	$2, %rcx	#, _23
+	.p2align 4,,10
+	.p2align 3
+.L3:
+# src/ir_analysis_test.c:10:         c[i] = a[i] + b[i];
+	movss	(%rdi,%rax), %xmm0	# MEM[(float *)a_13(D) + ivtmp.21_25 * 1], MEM[(float *)a_13(D) + ivtmp.21_25 * 1]
+	addss	(%rsi,%rax), %xmm0	# MEM[(float *)b_14(D) + ivtmp.21_25 * 1], tmp93
+# src/ir_analysis_test.c:10:         c[i] = a[i] + b[i];
+	movss	%xmm0, (%rdx,%rax)	# tmp93, MEM[(float *)c_15(D) + ivtmp.21_25 * 1]
+# src/ir_analysis_test.c:9:     for (int i = 0; i < n; i++) {
+	addq	$4, %rax	#, ivtmp.21
+	cmpq	%rax, %rcx	# ivtmp.21, _23
+	jne	.L3	#,
+.L1:
+# src/ir_analysis_test.c:12: }
+	ret	
+	.cfi_endproc
+.LFE39:
