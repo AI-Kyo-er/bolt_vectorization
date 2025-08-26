@@ -6,6 +6,8 @@
 #define SIZE 1000000
 #define MATRIX_SIZE 512
 
+int some_function(int x);
+
 // Case 1: Simple loop that should vectorize well
 void simple_vectorizable_loop(int* a, int* b, int* c, int n) {
     for (int i = 0; i < n; i++) {
