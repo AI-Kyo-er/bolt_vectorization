@@ -1,0 +1,19 @@
+Testing vectorization failure examples
+=======================================
+
+Test 1: Data-dependent branching
+Time: 0.009711 seconds (10000 iterations)
+
+Test 2: Loop-carried dependency
+Time: 0.011482 seconds (10000 iterations)
+
+Test 3: Indirect memory access
+Time: 0.002047 seconds (10000 iterations)
+
+Test 4: Function call in loop
+Time: 0.000000 seconds (10000 iterations)
+
+Test 5: Non-unit stride access
+Time: 0.001492 seconds (10000 iterations)
+
+All tests completed.
